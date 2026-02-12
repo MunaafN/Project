@@ -75,7 +75,7 @@ state/
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/MohdSajidJafri/WorkStuff.git
+git clone https://github.com/MunaafN/Project.git
 cd WorkStuff
 ```
 
