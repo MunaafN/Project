@@ -1,6 +1,5 @@
 [build]
   command = "npm run build"
-  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
@@ -8,10 +7,7 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# AI routes use OpenAI; longer timeout recommended (26s max on free tier)
 [functions]
-  external_node_modules = ["openai"]
   node_bundler = "esbuild"
-
-# Extend serverless function timeout to maximum allowed (26s on free, up to 60s on Pro)
-[functions."api/*"]
-  timeout = 26
+  external_node_modules = ["openai"]

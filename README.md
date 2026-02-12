@@ -112,4 +112,25 @@ npm run build
 npm start
 ```
 
-This creates an optimized production build and serves it on port 3000.
+This creates an optimized production build and serves it on port 3001.
+
+## Deploy to Netlify
+
+1. **Push your code to GitHub** (you already have https://github.com/MunaafN/Project.git)
+
+2. **Connect to Netlify**
+   - Go to [app.netlify.com](https://app.netlify.com) → Add new site → Import an existing project
+   - Choose GitHub and authorize Netlify
+   - Select your `MunaafN/Project` repository
+   - Netlify will auto-detect Next.js and use the config from `netlify.toml`
+
+3. **Set environment variables**
+   - In Netlify: Site settings → Environment variables → Add variable
+   - Add `OPENAI_API_KEY` with your OpenAI API key (from [platform.openai.com/api-keys](https://platform.openai.com/api-keys))
+   - Mark it as **sensitive** so it's hidden in logs
+
+4. **Deploy**
+   - Click "Deploy site" — Netlify will build and deploy automatically
+   - Your site will be live at `https://your-site-name.netlify.app`
+
+**Note:** AI requests can take 10–30+ seconds. Netlify's free tier limits serverless functions to 26 seconds. For longer prompts, consider upgrading to Netlify Pro (60s timeout) or simplifying prompts.
